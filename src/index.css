@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", "Georgia", serif;
+  --font-sans: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --color-lavender: #C9B8FF;
+  --color-baby-pink: #FFB8D9;
+  --color-sky-blue: #B8EEFF;
+  --color-mint: #B8FFE0;
+  --color-cream: #FFFAF5;
+  --color-navy: #1A1A2E;
+  --color-glass: rgba(255, 255, 255, 0.4);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/40 backdrop-blur-md border border-white/30;
+  }
+  .hero-gradient {
+    background: linear-gradient(135deg, #B8EEFF 0%, #C9B8FF 50%, #FFB8D9 100%);
+  }
+  .btn-gradient {
+    background: linear-gradient(90deg, #9b87f5, #FFB8D9);
+    @apply text-white;
+  }
+  .flavor-card {
+    transition: all 0.2s ease;
+    border: 1px solid rgba(26, 26, 46, 0.05);
+  }
+  .promo-bar {
+    @apply bg-navy text-white text-[11px] uppercase tracking-[1px] font-bold py-1.5 text-center;
+  }
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+}
+
